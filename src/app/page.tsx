@@ -5,10 +5,10 @@ import Main from "./components/Main";
 // import Image from "next/image";
 
 export default async function Home() {
-	await getBlogData();
+	const blogdata = await getBlogData();
 	return (
 		<div className="h-auto">
-			<Main />
+			<Main blogData={blogdata} />
 		</div>
 	);
 }
