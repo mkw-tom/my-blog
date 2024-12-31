@@ -6,7 +6,7 @@ import SideBar from "./SideBar";
 const Header = () => {
 	return (
 		<header
-			className="w-full h-16 fixed top-0 bg-opacity-90 bg-base-100"
+			className="w-full h-16 fixed top-0 bg-opacity-90 bg-base-100 z-50"
 			data-theme="luxury"
 		>
 			<div className="w-full h-full px-5 flex justify-between items-center">
