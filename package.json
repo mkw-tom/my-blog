@@ -6,7 +6,12 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "biome lint <files>",
+    "format": "biome format <files>",
+    "check": "biome check <files>",
+    "lint:fix": "biome lint --apply <files>",
+    "format:fix": "biome format <files> --write",
+    "check:fix": "biome check --apply <files>"
   },
   "dependencies": {
     "next": "15.1.3",
