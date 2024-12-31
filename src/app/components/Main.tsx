@@ -1,7 +1,14 @@
+"use client";
 import React from "react";
+import { useDarkMode } from "../state/useDarkModeContext";
 
 const Main = () => {
-	return <main className="h-lvh w-full mt-16">main</main>;
+	const { darkmode } = useDarkMode();
+	return (
+		<div data-theme={darkmode ? "luxury" : "light"}>
+			<main className="h-lvh w-full pt-16 bg-base-300">main</main>
+		</div>
+	);
 };
 
 export default Main;

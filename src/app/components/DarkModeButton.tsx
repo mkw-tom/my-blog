@@ -1,12 +1,18 @@
+"use client";
 import React from "react";
+import { useDarkMode } from "../state/useDarkModeContext";
 
 const DarkModeButton = () => {
+	const { darkmode, changeDarkmode } = useDarkMode();
+
 	return (
 		<label className="grid cursor-pointer place-items-center">
 			<input
 				type="checkbox"
 				value="synthwave"
 				className="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
+				checked={darkmode}
+				onChange={changeDarkmode}
 			/>
 			<svg
 				className="stroke-base-100 fill-base-100 col-start-1 row-start-1"
