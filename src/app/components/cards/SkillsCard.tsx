@@ -78,20 +78,16 @@ interface optionType {
 }
 const SkillsCard = () => {
 	const [option, setoption] = useState<optionType[]>(front || []);
+	const [iselect, setSelect] = useState<string>("");
 
-	function changeOption(arr: optionType[]): void {
+	function changeOption(arr: optionType[], select: string): void {
 		setoption(arr);
+		setSelect(select);
 	}
 
 	return (
 		<SlideIn direction="right">
 			<div className="card bg-gradient-to-tl from-green-500 to-base-200 bg-opacity-30  w-full md:w-[600px] shadow-xl">
-				{/* <figure>
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes"
-          />
-        </figure> */}
 				<div className="card-body w-full">
 					<h2 className="card-title ">触った技術</h2>
 					<div
@@ -100,43 +96,43 @@ const SkillsCard = () => {
 					>
 						<button
 							type="button"
-							className="tab tab-active font-bold"
-							onClick={() => changeOption(front)}
+							className={`tab  font-bold ${iselect === "front" ? "btn-active" : ""}`}
+							onClick={() => changeOption(front, "front")}
 						>
 							Front
 						</button>
 						<button
 							type="button"
-							className="tab font-bold"
-							onClick={() => changeOption(back)}
+							className={`tab  font-bold ${iselect === "back" ? "btn-active" : ""}`}
+							onClick={() => changeOption(back, "back")}
 						>
 							Back
 						</button>
 						<button
 							type="button"
-							className="tab font-bold"
-							onClick={() => changeOption(db)}
+							className={`tab  font-bold ${iselect === "db" ? "btn-active" : ""}`}
+							onClick={() => changeOption(db, "db")}
 						>
 							DB
 						</button>
 						<button
 							type="button"
-							className="tab font-bold"
-							onClick={() => changeOption(infra)}
+							className={`tab  font-bold ${iselect === "infra" ? "btn-active" : ""}`}
+							onClick={() => changeOption(infra, "infra")}
 						>
 							Infra
 						</button>
 						<button
 							type="button"
-							className="tab font-bold"
-							onClick={() => changeOption(uiux)}
+							className={`tab  font-bold ${iselect === "uiux" ? "btn-active" : ""}`}
+							onClick={() => changeOption(uiux, "uiux")}
 						>
 							UIUX
 						</button>
 						<button
 							type="button"
-							className="tab font-bold"
-							onClick={() => changeOption(other)}
+							className={`tab  font-bold ${iselect === "other" ? "btn-active" : ""}`}
+							onClick={() => changeOption(other, "other")}
 						>
 							Other
 						</button>
