@@ -1,4 +1,5 @@
 "use client";
+import FadeUp from "@/app/animations/FadeUp";
 import type { BlogDataType } from "@/types/microcmsType";
 import React, { useEffect, useState } from "react";
 import { CgSearchFound } from "react-icons/cg";
@@ -8,8 +9,27 @@ import SearchArea from "./SearchArea";
 const BlogList = ({ blogs }: { blogs: BlogDataType[] }) => {
 	const [search, setSearch] = useState<string>("");
 	const [blogData, setBlogData] = useState<BlogDataType[]>([]);
+	const [filter, setFilter] = useState<"old" | "new">("new");
 
 	useEffect(() => {
+		if (filter === "old") {
+			const older = blogData.sort((a, b) =>
+				new Date(a.publishedAt).getTime() > new Date(b.publishedAt).getTime()
+					? -1
+					: 1,
+			);
+			setBlogData(older);
+			window.localStorage.setItem("filter", "old");
+		} else if (filter === "new") {
+			const filted = blogData.sort((a, b) =>
+				new Date(a.publishedAt).getTime() < new Date(b.publishedAt).getTime()
+					? -1
+					: 1,
+			);
+			setBlogData(filted);
+			window.localStorage.setItem("filter", "new");
+		}
+
 		if (search === "") {
 			setBlogData(blogs);
 		} else {
@@ -18,11 +38,11 @@ const BlogList = ({ blogs }: { blogs: BlogDataType[] }) => {
 			);
 			setBlogData(filterBlogs);
 		}
-	}, [search, blogs]);
+	}, [search, blogs, filter, blogData]);
 
 	return (
-		<>
-			<SearchArea setSearch={setSearch} />
+		<FadeUp>
+			<SearchArea setSearch={setSearch} setFilter={setFilter} filter={filter} />
 			<div className="mx-3 md:mx-10">
 				<ul className="hidden md:grid grid-flow-row md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-evenly md:gap-9 lg:gap-12">
 					{blogData.map((data) => (
@@ -64,7 +84,7 @@ const BlogList = ({ blogs }: { blogs: BlogDataType[] }) => {
 					""
 				)}
 			</div>
-		</>
+		</FadeUp>
 	);
 };
 
