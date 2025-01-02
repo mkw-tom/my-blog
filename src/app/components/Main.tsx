@@ -13,7 +13,7 @@ const Main = ({ blogData }: { blogData: BlogDataType[] }) => {
 
 	return (
 		<main
-			className="h-auto w-full bg-base-100"
+			className="h-auto w-full mt-16"
 			data-theme={darkmode ? "black" : "lifo"}
 		>
 			<Top />
