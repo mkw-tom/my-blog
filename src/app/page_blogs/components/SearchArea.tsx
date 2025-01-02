@@ -5,8 +5,12 @@ import { BiFilter, BiSearch } from "react-icons/bi";
 
 const SearchArea = ({
 	setSearch,
+	setFilter,
+	filter,
 }: {
 	setSearch: React.Dispatch<React.SetStateAction<string>>;
+	setFilter: React.Dispatch<React.SetStateAction<"old" | "new">>;
+	filter: "old" | "new";
 }) => {
 	const [searchOpen, setSearchOpen] = useState(false);
 
@@ -16,30 +20,10 @@ const SearchArea = ({
 	function openSearchBar() {
 		setSearchOpen(!searchOpen);
 	}
+	function chooseFilter(choose: "old" | "new") {
+		setFilter(choose);
+	}
 	return (
-		//   <div className="block lg:hidden z-30 w-11/12 mx-auto font-bold mb-5">
-		//   <div className='p-3'>
-		//     <div className='flex items-center '>
-		//       <label className="input input-sm input-success  flex items-center flex-1">
-		//         <input type="text" className="grow" placeholder="記事を検索" onChange={(e) =>searchBlogs(e.target.value)} />
-		//         <svg
-		//           xmlns="http://www.w3.org/2000/svg"
-		//           viewBox="0 0 16 16"
-		//           fill="currentColor"
-		//           className="h-4 w-4 opacity-70"
-		//         >
-		//           <title>記事を検索</title>
-		//           <path
-		//             fillRule="evenodd"
-		//             d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-		//             clipRule="evenodd"
-		//           />
-		//         </svg>
-		//       </label>
-		//       <button type='button' className='btn btn-square btn-sm btn-base-100 '><BiFilter /></button>
-		//     </div>
-		//   </div>
-		// </div>
 		<>
 			<button
 				type="button"
@@ -81,12 +65,24 @@ const SearchArea = ({
 						</summary>
 						<ul className="absolute top-16 right-10 menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
 							<li>
-								<button type="button" className="btn btn-sm btn-ghost">
+								<button
+									type="button"
+									className={`btn btn-sm btn-ghost ${
+										filter === "new" ? "btn-active" : ""
+									}`}
+									onClick={() => chooseFilter("new")}
+								>
 									新着順
 								</button>
 							</li>
 							<li>
-								<button type="button" className="btn btn-sm btn-ghost">
+								<button
+									type="button"
+									className={`btn btn-sm btn-ghost ${
+										filter === "old" ? "btn-active" : ""
+									}`}
+									onClick={() => chooseFilter("old")}
+								>
 									古い順
 								</button>
 							</li>
@@ -100,7 +96,7 @@ const SearchArea = ({
 						className="btn btn-success btn-sm"
 						onClick={openSearchBar}
 					>
-						close
+						閉じる
 					</button>
 				</div>
 			</div>

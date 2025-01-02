@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
@@ -16,10 +17,15 @@ const ProduceCard = ({
 				<h2 className="card-title text-md">{title}</h2>
 				<p>{content}</p>
 				<div className="card-actions justify-end">
-					<button type="button" className="btn bg-base-100 ">
-						<FaArrowUpRightFromSquare />
-						<span className="">show now</span>
-					</button>
+					<Link href={title === "ブログ" ? "/page_blogs" : "/pages_products"}>
+						<button
+							type="button"
+							className="btn btn-default hover:bg-green-500 "
+						>
+							<FaArrowUpRightFromSquare />
+							<span className="">show now</span>
+						</button>
+					</Link>
 				</div>
 			</div>
 		</div>

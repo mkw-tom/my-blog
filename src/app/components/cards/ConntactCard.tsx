@@ -15,8 +15,8 @@ const infos = [
 
 const ConntactCard = () => {
 	return (
-		<SlideIn direction="right">
-			<div className="card bg-gradient-to-b from-green-500 to-base-200 bg-opacity-30  w-1/5 md:w-[600px] shadow-xl">
+		<div className="card bg-gradient-to-b from-green-500 to-base-200 bg-opacity-30  w-1/5 md:w-[600px] shadow-xl">
+			<SlideIn direction="right">
 				<div className="card-body w-full hidden md:block ">
 					<h2 className="card-title">繋がる</h2>
 					<p className="hidden md:block">
@@ -33,8 +33,8 @@ const ConntactCard = () => {
 						</div>
 					))}
 				</div>
-			</div>
-		</SlideIn>
+			</SlideIn>
+		</div>
 	);
 };
 
