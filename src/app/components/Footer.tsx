@@ -4,8 +4,8 @@ import React from "react";
 const Footer = () => {
 	return (
 		<footer
-			className="footer footer-center bg-base-100 text-base-content rounded p-10  bottom-0"
-			data-theme="luxury"
+			className="footer footer-center text-base-content rounded p-10  bottom-0 border-t-2 border-green-500"
+			// data-theme='black'
 		>
 			<nav className="grid grid-flow-col gap-4">
 				<Link href="/" className="link link-hover">

@@ -46,7 +46,7 @@ export const DarkmodeProvider = ({ children }: { children: ReactNode }) => {
 
 	return (
 		<darkmodeContext.Provider value={{ changeDarkmode, darkmode }}>
-			{children}
+			<div data-theme={darkmode ? "black" : "lofi"}>{children}</div>
 		</darkmodeContext.Provider>
 	);
 };

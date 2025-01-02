@@ -1,5 +1,5 @@
 import { createClient } from "microcms-js-sdk";
-import type { BlogDataType } from "./types/microcmsType";
+import type { BlogDataType } from "../../types/microcmsType";
 
 const serviceDomain = process.env.NEXT_PUBLIC_SERVICE_DOMAIN as string;
 const apiKey = process.env.NEXT_PUBLIC_API_KEY as string;

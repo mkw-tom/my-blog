@@ -1,4 +1,4 @@
-import type { BlogDataType } from "@/lib/microCMS/types/microcmsType";
+import type { BlogDataType } from "@/types/microcmsType";
 import React from "react";
 
 const BlogCard = ({ data }: { data: BlogDataType }) => {
