@@ -12,9 +12,19 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      clipPath: {
+        'left-skew': 'polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%)',
+      },
     },
   },
-  plugins: [require('daisyui')],
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  plugins: [    ({ addUtilities }: {addUtilities: any}) => {
+    addUtilities({
+      '.clip-left-skew': {
+        clipPath: 'polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%)',
+      },
+    });
+  }, require("@tailwindcss/typography"),require('daisyui')],
   daisyui: {
     themes: ['black', 'lofi' ]
   },

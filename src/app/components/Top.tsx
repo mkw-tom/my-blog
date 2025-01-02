@@ -4,7 +4,7 @@ import Fadein from "../animations/Fadein";
 const Top = () => {
 	return (
 		<Fadein>
-			<div className="h-[450px] md:h-96 mt-16 text-center flex flex-col md:flex-row justify-around items-center bg-gradient-to-tr from-base-100 to-green-500">
+			<div className="h-[450px] md:h-96  text-center flex flex-col md:flex-row justify-around items-center bg-gradient-to-tr from-base-100 to-green-500">
 				{/* <div className='h-72 w-1/3 bg-yellow-500 bg-opacity-50 absolute left-0 top-16 z-30' /> */}
 				{/* <Image src={'/5B83C74C-53CB-450E-A1DC-45FDE62B03B9_1_105_c.jpeg'} width={100} height={100}  alt="profile"  className='h-72 w-1/3 object-cover'/> */}
 
