@@ -1,4 +1,5 @@
 "use client";
+import SlideIn from "@/app/animations/SlideIn";
 import { motion } from "motion/react";
 import type React from "react";
 import { useState } from "react";
@@ -83,83 +84,85 @@ const SkillsCard = () => {
 	}
 
 	return (
-		<div className="card bg-gradient-to-tl from-green-500 to-base-200 bg-opacity-30  w-full md:w-[600px] shadow-xl">
-			{/* <figure>
+		<SlideIn direction="right">
+			<div className="card bg-gradient-to-tl from-green-500 to-base-200 bg-opacity-30  w-full md:w-[600px] shadow-xl">
+				{/* <figure>
           <img
             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
             alt="Shoes"
           />
         </figure> */}
-			<div className="card-body w-full">
-				<h2 className="card-title ">触った技術</h2>
-				<div
-					role="tablist"
-					className="tabs tabs-bordered tabs-xs sm:tabs-sm lg:tabs-md "
-				>
-					<button
-						type="button"
-						className="tab tab-active font-bold"
-						onClick={() => changeOption(front)}
+				<div className="card-body w-full">
+					<h2 className="card-title ">触った技術</h2>
+					<div
+						role="tablist"
+						className="tabs tabs-bordered tabs-xs sm:tabs-sm lg:tabs-md "
 					>
-						Front
-					</button>
-					<button
-						type="button"
-						className="tab font-bold"
-						onClick={() => changeOption(back)}
-					>
-						Back
-					</button>
-					<button
-						type="button"
-						className="tab font-bold"
-						onClick={() => changeOption(db)}
-					>
-						DB
-					</button>
-					<button
-						type="button"
-						className="tab font-bold"
-						onClick={() => changeOption(infra)}
-					>
-						Infra
-					</button>
-					<button
-						type="button"
-						className="tab font-bold"
-						onClick={() => changeOption(uiux)}
-					>
-						UIUX
-					</button>
-					<button
-						type="button"
-						className="tab font-bold"
-						onClick={() => changeOption(other)}
-					>
-						Other
-					</button>
-				</div>
+						<button
+							type="button"
+							className="tab tab-active font-bold"
+							onClick={() => changeOption(front)}
+						>
+							Front
+						</button>
+						<button
+							type="button"
+							className="tab font-bold"
+							onClick={() => changeOption(back)}
+						>
+							Back
+						</button>
+						<button
+							type="button"
+							className="tab font-bold"
+							onClick={() => changeOption(db)}
+						>
+							DB
+						</button>
+						<button
+							type="button"
+							className="tab font-bold"
+							onClick={() => changeOption(infra)}
+						>
+							Infra
+						</button>
+						<button
+							type="button"
+							className="tab font-bold"
+							onClick={() => changeOption(uiux)}
+						>
+							UIUX
+						</button>
+						<button
+							type="button"
+							className="tab font-bold"
+							onClick={() => changeOption(other)}
+						>
+							Other
+						</button>
+					</div>
 
-				{/* <p className="hidden md:block text-base-100">
+					{/* <p className="hidden md:block text-base-100">
             まだまだ学習中d
           </p> */}
-				{/* <div className="card-actions justify-end"> */}
+					{/* <div className="card-actions justify-end"> */}
 
-				{/* <button type="button" className="btn btn-primary">
+					{/* <button type="button" className="btn btn-primary">
               Buy Now
             </button> */}
-				{/* </div> */}
-			</div>
-			<div className="w-full px-10 pb-10  overflow-scroll">
-				<div className="flex w-auto justify-start gap-5 md:gap-10 ">
-					{option.map((e) => (
-						<div className="w-10 h-10" key={e.id}>
-							{e.tag}
-						</div>
-					))}
+					{/* </div> */}
+				</div>
+				<div className="w-full px-10 pb-10  overflow-scroll">
+					<div className="flex w-auto justify-start gap-5 md:gap-10 ">
+						{option.map((e) => (
+							<div className="w-10 h-10" key={e.id}>
+								{e.tag}
+							</div>
+						))}
+					</div>
 				</div>
 			</div>
-		</div>
+		</SlideIn>
 	);
 };
 
