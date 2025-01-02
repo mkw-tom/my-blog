@@ -1,4 +1,3 @@
-"use client";
 import type { BlogDataType } from "@/types/microcmsType";
 import React from "react";
 import SlideIn from "../animations/SlideIn";
@@ -9,13 +8,8 @@ import ProduceCard from "./cards/ProduceCard";
 import SkillsCard from "./cards/SkillsCard";
 
 const Main = ({ blogData }: { blogData: BlogDataType[] }) => {
-	const { darkmode } = useDarkMode();
-
 	return (
-		<main
-			className="h-auto w-full mt-16"
-			data-theme={darkmode ? "black" : "lifo"}
-		>
+		<main className="h-auto w-full mt-16">
 			<Top />
 			<div className="flex flex-col gap-10 mx-3 md:mx-10 pt-10 pb-56">
 				<SkillsCard />

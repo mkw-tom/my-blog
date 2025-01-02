@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "motion/react";
 import type { ReactNode } from "react";
 
@@ -5,11 +6,11 @@ const FadeUp = ({ children }: { children: ReactNode }) => {
 	const variants = {
 		initial: {
 			opacity: 0,
-			translateX: "50vh",
+			translateY: "20vh",
 		},
 		animate: {
 			opacity: 1,
-			translateX: 0,
+			translateY: 0,
 			transition: {
 				duration: 2,
 				deley: 0.5,
