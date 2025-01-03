@@ -78,7 +78,7 @@ interface optionType {
 }
 const SkillsCard = () => {
 	const [option, setoption] = useState<optionType[]>(front || []);
-	const [iselect, setSelect] = useState<string>("");
+	const [iselect, setSelect] = useState<string>("front");
 
 	function changeOption(arr: optionType[], select: string): void {
 		setoption(arr);
@@ -96,42 +96,42 @@ const SkillsCard = () => {
 					>
 						<button
 							type="button"
-							className={`tab  font-bold ${iselect === "front" ? "btn-active" : ""}`}
+							className={`tab  font-bold ${iselect === "front" ? "tab-active" : ""}`}
 							onClick={() => changeOption(front, "front")}
 						>
 							Front
 						</button>
 						<button
 							type="button"
-							className={`tab  font-bold ${iselect === "back" ? "btn-active" : ""}`}
+							className={`tab  font-bold ${iselect === "back" ? "tab-active" : ""}`}
 							onClick={() => changeOption(back, "back")}
 						>
 							Back
 						</button>
 						<button
 							type="button"
-							className={`tab  font-bold ${iselect === "db" ? "btn-active" : ""}`}
+							className={`tab  font-bold ${iselect === "db" ? "tab-active" : ""}`}
 							onClick={() => changeOption(db, "db")}
 						>
 							DB
 						</button>
 						<button
 							type="button"
-							className={`tab  font-bold ${iselect === "infra" ? "btn-active" : ""}`}
+							className={`tab  font-bold ${iselect === "infra" ? "tab-active" : ""}`}
 							onClick={() => changeOption(infra, "infra")}
 						>
 							Infra
 						</button>
 						<button
 							type="button"
-							className={`tab  font-bold ${iselect === "uiux" ? "btn-active" : ""}`}
+							className={`tab  font-bold ${iselect === "uiux" ? "tab-active" : ""}`}
 							onClick={() => changeOption(uiux, "uiux")}
 						>
 							UIUX
 						</button>
 						<button
 							type="button"
-							className={`tab  font-bold ${iselect === "other" ? "btn-active" : ""}`}
+							className={`tab  font-bold ${iselect === "other" ? "tab-active" : ""}`}
 							onClick={() => changeOption(other, "other")}
 						>
 							Other

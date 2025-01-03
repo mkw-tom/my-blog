@@ -1,12 +1,8 @@
-import { getBlogData } from "@/lib/microCMS/blogs";
-import Header from "./components/Header";
-import Main from "./components/Main";
+import React from "react";
+import Top from "./components/Top";
 
-// import Image from "next/image";
-
-export default async function Home() {
-	// const blogdata = await getBlogData();
-	const blogdata = [
+const page = () => {
+	const blogs = [
 		{
 			id: "111",
 			createdAt: "2202020",
@@ -100,9 +96,12 @@ export default async function Home() {
 			},
 		},
 	];
+
 	return (
-		<div className="h-auto ">
-			<Main blogData={blogdata} />
+		<div className="h-auto sm:h-auto w-full mt-16 mb-32">
+			<Top blogs={blogs} />
 		</div>
 	);
-}
+};
+
+export default page;
