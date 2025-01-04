@@ -22,7 +22,7 @@ import {
 	SiVercel,
 } from "react-icons/si";
 
-const Top = ({ blogs }: { blogs: BlogDataType[] }) => {
+const Top = ({ products }: { products: BlogDataType[] }) => {
 	const items = [
 		{ id: 1, tag: <SiTypescript className="text-2xl md:text-3xl" /> },
 		{ id: 2, tag: <SiReact className="text-2xl md:text-3xl" /> },
@@ -48,7 +48,7 @@ const Top = ({ blogs }: { blogs: BlogDataType[] }) => {
 					<div className="h-72 md:h-96 flex mb-20 bg-gradient-to-t from-base-100 to-green-500">
 						<div className="object-cover h-full sm:w-3/5 " />
 						<img
-							src={blogs[0].eyecatch?.url}
+							src={products[0].eyecatch?.url}
 							alt="Shoes"
 							className="object-cover h-full flex-1 sm:clip-left-skew"
 						/>

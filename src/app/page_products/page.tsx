@@ -1,8 +1,9 @@
 import React from "react";
+import ProductList from "./components/ProductList";
 import Top from "./components/Top";
 
 const page = () => {
-	const blogs = [
+	const products = [
 		{
 			id: "111",
 			createdAt: "2202020",
@@ -99,7 +100,10 @@ const page = () => {
 
 	return (
 		<div className="h-auto sm:h-auto w-full mt-16 mb-32">
-			<Top blogs={blogs} />
+			<Top products={products} />
+			<div className="w-11/12 mx-auto">
+				<ProductList products={products} />
+			</div>
 		</div>
 	);
 };
