@@ -1,9 +1,7 @@
 import { getBlogData } from "@/lib/microCMS/blogs";
 import React from "react";
-import BlogList from "./components/BlogList";
-import Top from "./components/Top";
 
-const page = async () => {
+const page = async ({ params }: { params: Promise<{ title: string }> }) => {
 	const blogs = await getBlogData();
 	// const blogs = [
 	// 	{
@@ -100,11 +98,15 @@ const page = async () => {
 	// 	}
 	// ]
 
+	const selectBlog = blogs.find(
+		async (data) => data.title === (await params).title,
+	);
+	console.log("title");
 	return (
-		<main className="h-auto sm:h-auto w-full mt-16 mb-32">
-			<Top blogs={blogs} />
-			<BlogList blogs={blogs} />
-		</main>
+		<div className="mt-32">
+			<h1 className="text-white">{selectBlog?.title}</h1>
+			<h1 className="text-white">{selectBlog?.content}</h1>
+		</div>
 	);
 };
 

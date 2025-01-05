@@ -13,10 +13,10 @@ const Main = ({ blogData }: { blogData: BlogDataType[] }) => {
 			<Top />
 			<div className="flex flex-col gap-10 mx-3 md:mx-10 pt-10 pb-56">
 				<SkillsCard />
-				<div className="w-full h-full flex md:flex-col gap-5 md:gap-10">
-					{/* <div className=" flex flex-col md:flex-row gap-10 justify-bettween w-3/5 md:w-full "> */}
-					{/* <div className="w-full grid grid-flow-row grid-cols-2 md:grid-cols-3 bg-blue-500"> */}
-					<SlideIn direction="left">
+				<SlideIn direction="left">
+					<div className="w-full h-full flex md:flex-col gap-5 md:gap-10">
+						{/* <div className=" flex flex-col md:flex-row gap-10 justify-bettween w-3/5 md:w-full "> */}
+						{/* <div className="w-full grid grid-flow-row grid-cols-2 md:grid-cols-3 bg-blue-500"> */}
 						<div className="grid grid-cols-1  md:grid-cols-2 w-10/12 gap-10">
 							<ProduceCard
 								title={"ブログ"}
@@ -29,9 +29,9 @@ const Main = ({ blogData }: { blogData: BlogDataType[] }) => {
 								link={"/341BA731-0DCD-469D-A8E0-5DD37125D170_1_105_c.jpeg"}
 							/>
 						</div>
-					</SlideIn>
-					<ConntactCard />
-				</div>
+						<ConntactCard />
+					</div>
+				</SlideIn>
 				{/* <SkillsCard /> */}
 				{/* </div> */}
 			</div>

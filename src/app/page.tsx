@@ -36,7 +36,7 @@ export default async function Home() {
 			updatedAt: "951375",
 			publishedAt: "34187634",
 			revisedAt: "3817498",
-			title: "ダミーデータ１",
+			title: "ダミーデータ2",
 			content:
 				"これはダミーです。これはダミーです。これはダミーです。これはダミーです。これはダミーです。これはダミーです。",
 			eyecatch: {
@@ -59,7 +59,7 @@ export default async function Home() {
 			updatedAt: "951375",
 			publishedAt: "34187634",
 			revisedAt: "3817498",
-			title: "ダミーデータ１",
+			title: "ダミーデータ3",
 			content:
 				"これはダミーです。これはダミーです。これはダミーです。これはダミーです。これはダミーです。これはダミーです。",
 			eyecatch: {
@@ -82,7 +82,7 @@ export default async function Home() {
 			updatedAt: "951375",
 			publishedAt: "34187634",
 			revisedAt: "3817498",
-			title: "ダミーデータ１",
+			title: "ダミーデータ4",
 			content:
 				"これはダミーです。これはダミーです。これはダミーです。これはダミーです。これはダミーです。これはダミーです。",
 			eyecatch: {

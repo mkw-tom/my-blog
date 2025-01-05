@@ -12,16 +12,18 @@ const BlogList = ({ blogs }: { blogs: BlogDataType[] }) => {
 	const [filter, setFilter] = useState<"old" | "new">("new");
 
 	useEffect(() => {
+		const BlogsCopy = [...blogs];
+
 		if (filter === "old") {
-			const older = blogData.sort((a, b) =>
+			const older = BlogsCopy.sort((a, b) =>
 				new Date(a.publishedAt).getTime() > new Date(b.publishedAt).getTime()
 					? -1
 					: 1,
 			);
-			setBlogData(older);
+			setBlogData([...older]);
 			window.localStorage.setItem("filter", "old");
 		} else if (filter === "new") {
-			const filted = blogData.sort((a, b) =>
+			const filted = BlogsCopy.sort((a, b) =>
 				new Date(a.publishedAt).getTime() < new Date(b.publishedAt).getTime()
 					? -1
 					: 1,
@@ -31,14 +33,14 @@ const BlogList = ({ blogs }: { blogs: BlogDataType[] }) => {
 		}
 
 		if (search === "") {
-			setBlogData(blogs);
+			setBlogData(BlogsCopy);
 		} else {
-			const filterBlogs = blogs.filter((data) =>
+			const filterBlogs = BlogsCopy.filter((data) =>
 				data.title.toLowerCase().includes(search.toLowerCase()),
 			);
 			setBlogData(filterBlogs);
 		}
-	}, [search, blogs, filter, blogData]);
+	}, [search, blogs, filter]);
 
 	return (
 		<FadeUp>
