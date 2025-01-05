@@ -1,4 +1,5 @@
 "use client";
+import FadeUp from "@/app/animations/FadeUp";
 import SlideIn from "@/app/animations/SlideIn";
 import { motion } from "motion/react";
 import type React from "react";
@@ -20,6 +21,7 @@ import {
 	SiOpenai,
 	SiReact,
 	SiReacthookform,
+	SiRedux,
 	SiSemanticui,
 	SiShadcnui,
 	SiSupabase,
@@ -65,6 +67,7 @@ const uiux = [
 ];
 
 const other = [
+	{ id: 0, tag: <SiRedux className="text-4xl" /> },
 	{ id: 1, tag: <SiReacthookform className="text-4xl" /> },
 	{ id: 2, tag: <SiZod className="text-4xl" /> },
 	{ id: 3, tag: <SiAuth0 className="text-4xl" /> },
@@ -137,25 +140,17 @@ const SkillsCard = () => {
 							Other
 						</button>
 					</div>
-
-					{/* <p className="hidden md:block text-base-100">
-            まだまだ学習中d
-          </p> */}
-					{/* <div className="card-actions justify-end"> */}
-
-					{/* <button type="button" className="btn btn-primary">
-              Buy Now
-            </button> */}
-					{/* </div> */}
 				</div>
 				<div className="w-full px-10 pb-10  overflow-scroll">
-					<div className="flex w-auto justify-start gap-5 md:gap-10 ">
-						{option.map((e) => (
-							<div className="w-10 h-10" key={e.id}>
-								{e.tag}
-							</div>
-						))}
-					</div>
+					<FadeUp>
+						<div className="flex w-auto justify-start gap-5 md:gap-10 ">
+							{option.map((e) => (
+								<div className="w-10 h-10" key={e.id}>
+									{e.tag}
+								</div>
+							))}
+						</div>
+					</FadeUp>
 				</div>
 			</div>
 		</SlideIn>

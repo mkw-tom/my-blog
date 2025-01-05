@@ -17,7 +17,7 @@ const ProduceCard = ({
 				<h2 className="card-title text-md">{title}</h2>
 				<p>{content}</p>
 				<div className="card-actions justify-end">
-					<Link href={title === "ブログ" ? "/page_blogs" : "/pages_products"}>
+					<Link href={title === "ブログ" ? "/page_blogs" : "/page_products"}>
 						<button
 							type="button"
 							className="btn btn-default hover:bg-green-500 "

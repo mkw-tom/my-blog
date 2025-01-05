@@ -27,23 +27,30 @@ const SearchArea = ({
 		<>
 			<button
 				type="button"
-				className="fixed bottom-20 right-10 btn btn-circle w-16 h-16 md:w-20 md:h-20  shadow-2xl border-4 border-green-500 bg-base-100 bg-opacity-60 animate-pulse z-50"
+				className="btn fixed bottom-20 md:top-0 right-7 md:right-20 w-16 h-16 md:w-auto shadow-2xl border-4 bg-opacity-60 border-green-500 bg-base-100 z-50 md:btn-ghost"
 				onClick={openSearchBar}
 			>
+				<span className="hidden md:block font-normal">記事を検索</span>
 				<BiSearch />
 			</button>
 			<div
 				className={` ${
 					searchOpen ? "fixed" : "hidden"
-				} top-16 right-0 left-0 z-50 bg-base-200 bg-opacity-90 h-36 shadow-xl p-5`}
+				} top-16 right-0 left-0 z-50 bg-base-200  h-36 shadow-xl p-5`}
 			>
 				<div className="flex items-center ">
-					<label className="input input-sm sm:input-md input-success  flex items-center flex-1">
+					<label
+						htmlFor="auto-focus-input"
+						className="input input-sm sm:input-md input-success  flex items-center flex-1"
+					>
 						<input
+							id="auto-focus-input"
 							type="text"
-							className="grow"
+							className="grow "
 							placeholder="記事を検索"
 							onChange={(e) => searchBlogs(e.target.value)}
+							// biome-ignore lint/a11y/noAutofocus: <explanation>
+							autoFocus={true}
 						/>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +67,8 @@ const SearchArea = ({
 						</svg>
 					</label>
 					<details className="dropdown">
-						<summary className="btn m-1">
+						<summary className="btn btn-sm sm:btn-md m-1 btn-success">
+							<span className="text-xs">並べ替え</span>
 							<BiFilter />
 						</summary>
 						<ul className="absolute top-16 right-10 menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
