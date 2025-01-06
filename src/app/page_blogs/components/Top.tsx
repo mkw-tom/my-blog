@@ -45,7 +45,7 @@ const Top = ({ blogs }: { blogs: BlogDataType[] }) => {
 						<div className="flex flex-col mt-auto gap-5 items-end text-white">
 							<h2 className="text-sm md:text-md">Qiita・Zennで更新中</h2>
 							<div className="flex items-center gap-5">
-								<Link href={"https://qiita.com/mkw-tom"}>
+								<Link href={"https://qiita.com/mkw-tom"} target="blank">
 									<button
 										type="button"
 										className="btn btn-ghost btn-sm md:btn-md bg-white bg-opacity-40"
@@ -53,7 +53,7 @@ const Top = ({ blogs }: { blogs: BlogDataType[] }) => {
 										<SiQiita className="text-2xl md:text-4xl" />
 									</button>
 								</Link>
-								<Link href={"https://zenn.dev/mkwtom"}>
+								<Link href={"https://zenn.dev/mkwtom"} target="blank">
 									<button
 										type="button"
 										className="btn btn-ghost btn-sm md:btn-md bg-white bg-opacity-40"
