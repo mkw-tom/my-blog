@@ -22,28 +22,30 @@ const BlogCard = ({ data }: { data: BlogDataType }) => {
 		return content;
 	}
 	return (
-		<Link href={`/page_blogs/${data.title}`}>
-			<div className="card bg-base-300 bg-gradient-to-br to-base-300 from-green-500  h-auto shadow-xl">
-				<figure className="relative block h-40 lg:h-[150px] w-full bg-gray-900">
-					<div className="absolute top-3 right-2 badge badge-sm bg-red-500">
-						New
-					</div>
-					<img
-						src={data.eyecatch?.url}
-						alt="Shoes"
-						className="block object-cover"
-					/>
-				</figure>
-				<div className="card-body h-56">
-					<h2 className="card-title text-md">{titleLength(data.title)}</h2>
-					<p className="">{contentLength(data.content)}</p>
-					<div className="card-actions justify-end">
-						<div className="badge badge-outline">{data.category?.name}</div>
-						<div className="badge badge-outline">Products</div>
+		<div className="w-full h-full">
+			<Link href={`/page_blogs/${data.id}`}>
+				<div className="card bg-base-300 bg-gradient-to-br to-base-300 from-green-500  h-auto shadow-xl">
+					<figure className="relative block h-40 lg:h-[150px] w-full bg-gray-900">
+						<div className="absolute top-3 right-2 badge badge-sm bg-red-500">
+							New
+						</div>
+						<img
+							src={data.eyecatch?.url}
+							alt="Shoes"
+							className="block object-cover"
+						/>
+					</figure>
+					<div className="card-body h-56">
+						<h2 className="card-title text-md">{titleLength(data.title)}</h2>
+						<p className="">{contentLength(data.content)}</p>
+						<div className="card-actions justify-end">
+							<div className="badge badge-outline">{data.category?.name}</div>
+							<div className="badge badge-outline">Products</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</Link>
+			</Link>
+		</div>
 	);
 };
 
