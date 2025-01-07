@@ -1,4 +1,4 @@
-import { getBlogData } from "@/lib/microCMS/blogs";
+import { getBlogData } from "@/lib/microCMS/api";
 import type { BlogDataType } from "@/types/microcmsType";
 import React from "react";
 import Blog from "./components/Blog";
