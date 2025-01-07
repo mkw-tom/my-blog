@@ -1,4 +1,4 @@
-import type { BlogDataType } from "@/types/microcmsType";
+import type { BlogDataType, ProductDataType } from "@/types/microcmsType";
 import React from "react";
 import SlideIn from "../animations/SlideIn";
 import { useDarkMode } from "../state/useDarkModeContext";
@@ -7,7 +7,10 @@ import ConntactCard from "./cards/ConntactCard";
 import ProduceCard from "./cards/ProduceCard";
 import SkillsCard from "./cards/SkillsCard";
 
-const Main = ({ blogData }: { blogData: BlogDataType[] }) => {
+const Main = ({
+	blogData,
+	products,
+}: { blogData: BlogDataType[]; products: ProductDataType[] }) => {
 	return (
 		<main className="h-auto w-full mt-16">
 			<Top />
@@ -26,7 +29,7 @@ const Main = ({ blogData }: { blogData: BlogDataType[] }) => {
 							<ProduceCard
 								title={"個人開発"}
 								content={"これまで開発してきたプロダクトをご紹介"}
-								link={"/341BA731-0DCD-469D-A8E0-5DD37125D170_1_105_c.jpeg"}
+								link={products[0]?.images[0].url}
 							/>
 						</div>
 						<ConntactCard />
