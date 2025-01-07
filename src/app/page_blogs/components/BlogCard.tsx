@@ -24,7 +24,7 @@ const BlogCard = ({ data }: { data: BlogDataType }) => {
 	return (
 		<div className="w-full h-full">
 			<Link href={`/page_blogs/${data.id}`}>
-				<div className="card bg-base-300 bg-gradient-to-br to-base-300 from-green-500  h-auto shadow-xl">
+				<div className="card bg-base-300 bg-gradient-to-br to-base-300 from-green-500  h-auto shadow-2xl">
 					<figure className="relative block h-40 lg:h-[150px] w-full bg-gray-900">
 						{/* <div className="absolute top-3 right-2 badge badge-sm bg-red-500">
 							New

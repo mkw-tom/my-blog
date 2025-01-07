@@ -1,6 +1,7 @@
 "use client";
 import FadeUp from "@/app/animations/FadeUp";
 import type { BlogDataType } from "@/types/microcmsType";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { CgSearchFound } from "react-icons/cg";
 import BlogCard from "./BlogCard";
@@ -58,20 +59,37 @@ const BlogList = ({ blogs }: { blogs: BlogDataType[] }) => {
 						{/* head */}
 						<thead>
 							<tr>
-								{/* <th /> */}
 								<th>タイトル</th>
-								<th>更新日</th>
+								<th />
+								{/* <th>更新日</th> */}
 							</tr>
 						</thead>
 						<tbody>
 							{blogData.map((e) => (
 								<tr key={e.id}>
-									{/* <th></th> */}
 									<td className="flex flex-col justify-start">
-										<span>{e.title}</span>
-										<span className="badge badge-sm badge-outline">React</span>
+										<Link
+											href={`page_blogs/${e.id}`}
+											className="hover:opacity-50 transition-opacity duration-100"
+										>
+											<span className="">{e.title}</span>
+											<div className="flex items-center justify-between mt-2">
+												<span className="badge badge-sm badge-outline">
+													{e.category?.name}
+												</span>
+												<span className="text-xs">
+													投稿日：{new Date(e.publishedAt).toLocaleDateString()}
+												</span>
+											</div>
+										</Link>
 									</td>
-									<td>{new Date(e.publishedAt).toLocaleDateString()}</td>
+									<th>
+										<img
+											src={e.eyecatch?.url}
+											alt="イメージ"
+											className="w-20 h-10 object-cover"
+										/>
+									</th>
 								</tr>
 							))}
 							{/* row 1 */}

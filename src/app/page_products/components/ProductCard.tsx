@@ -28,7 +28,7 @@ const ProductCard = ({ data }: { data: ProductDataType }) => {
 			<div className="bg-gradient-to-br from-base-300 to-green-500  shadow-xl ">
 				<div className="card-body">
 					<div className="flex justify-between">
-						<h2 className="card-title">{data.name}</h2>
+						<h2 className="card-title lg:text-2xl">{data.name}</h2>
 						<div className="flex md:hidden items-center gap-1">
 							<Link
 								href="https://tekishoku-sinndann.vercel.app/"
