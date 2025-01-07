@@ -1,7 +1,7 @@
 import Fadein from "@/app/animations/Fadein";
 import InfinityScroll from "@/app/animations/InfinityScroll";
 import SlideIn from "@/app/animations/SlideIn";
-import type { BlogDataType } from "@/types/microcmsType";
+import type { ProductDataType } from "@/types/microcmsType";
 import Link from "next/link";
 import React from "react";
 import { BsGithub } from "react-icons/bs";
@@ -22,7 +22,7 @@ import {
 	SiVercel,
 } from "react-icons/si";
 
-const Top = ({ products }: { products: BlogDataType[] }) => {
+const Top = ({ products }: { products: ProductDataType[] }) => {
 	const items = [
 		{ id: 1, tag: <SiTypescript className="text-2xl md:text-3xl" /> },
 		{ id: 2, tag: <SiReact className="text-2xl md:text-3xl" /> },
@@ -48,7 +48,7 @@ const Top = ({ products }: { products: BlogDataType[] }) => {
 					<div className="h-72 md:h-96 flex mb-20 bg-gradient-to-t from-base-100 to-green-500">
 						<div className="object-cover h-full sm:w-2/5 " />
 						<img
-							src={products[0].eyecatch?.url}
+							src={products[0].mainImage?.url}
 							alt="Shoes"
 							className="object-cover h-full flex-1 sm:clip-left-skew"
 						/>
