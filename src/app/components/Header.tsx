@@ -13,12 +13,29 @@ const Header = () => {
 				<SideBar />
 				<div className="block md:hidden" />
 				<Link href={"/"}>
-					<h1 className="text-2xl font-mono h-full font-bold -sm ">Tomu.dev</h1>
+					<button
+						type="button"
+						className="btn btn-ghost text-2xl font-mono h-full font-bold "
+					>
+						Tomu.dev
+					</button>
 				</Link>
-				<ul className="hidden items-center gap-10 md:flex">
-					<Link href="/blogs">ブログ</Link>
-					<Link href="/blogs">個人開発</Link>
-					<Link href="/blogs">繋がる</Link>
+				<ul className="hidden items-center gap-10 md:grid grid-cols-3">
+					<Link href="/">
+						<button type="button" className="btn btn-ghost">
+							トップ
+						</button>
+					</Link>
+					<Link href="/page_blogs">
+						<button type="button" className="btn btn-ghost">
+							ブログ
+						</button>
+					</Link>
+					<Link href="/page_products">
+						<button type="button" className="btn btn-ghost">
+							個人開発
+						</button>
+					</Link>
 				</ul>
 				<DarkModeButton />
 			</div>

@@ -14,22 +14,22 @@ const BlogList = ({ blogs }: { blogs: BlogDataType[] }) => {
 	useEffect(() => {
 		const BlogsCopy = [...blogs];
 
-		if (filter === "old") {
+		if (filter === "new") {
 			const older = BlogsCopy.sort((a, b) =>
 				new Date(a.publishedAt).getTime() > new Date(b.publishedAt).getTime()
 					? -1
 					: 1,
 			);
 			setBlogData([...older]);
-			window.localStorage.setItem("filter", "old");
-		} else if (filter === "new") {
+			window.localStorage.setItem("filter", "new");
+		} else if (filter === "old") {
 			const filted = BlogsCopy.sort((a, b) =>
 				new Date(a.publishedAt).getTime() < new Date(b.publishedAt).getTime()
 					? -1
 					: 1,
 			);
 			setBlogData(filted);
-			window.localStorage.setItem("filter", "new");
+			window.localStorage.setItem("filter", "old");
 		}
 
 		if (search === "") {

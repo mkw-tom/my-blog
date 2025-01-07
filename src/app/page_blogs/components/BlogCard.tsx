@@ -26,9 +26,9 @@ const BlogCard = ({ data }: { data: BlogDataType }) => {
 			<Link href={`/page_blogs/${data.id}`}>
 				<div className="card bg-base-300 bg-gradient-to-br to-base-300 from-green-500  h-auto shadow-xl">
 					<figure className="relative block h-40 lg:h-[150px] w-full bg-gray-900">
-						<div className="absolute top-3 right-2 badge badge-sm bg-red-500">
+						{/* <div className="absolute top-3 right-2 badge badge-sm bg-red-500">
 							New
-						</div>
+						</div> */}
 						<img
 							src={data.eyecatch?.url}
 							alt="Shoes"
@@ -38,9 +38,9 @@ const BlogCard = ({ data }: { data: BlogDataType }) => {
 					<div className="card-body h-56">
 						<h2 className="card-title text-md">{titleLength(data.title)}</h2>
 						<p className="">{contentLength(data.content)}</p>
-						<div className="card-actions justify-end">
+						<div className="card-actions mt-auto flex items-center justify-between">
 							<div className="badge badge-outline">{data.category?.name}</div>
-							<div className="badge badge-outline">Products</div>
+							投稿日：{new Date(data.publishedAt).toLocaleDateString()}
 						</div>
 					</div>
 				</div>

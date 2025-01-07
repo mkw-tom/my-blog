@@ -27,10 +27,10 @@ const SearchArea = ({
 		<>
 			<button
 				type="button"
-				className="btn fixed bottom-20 md:top-0 right-7 md:right-20 w-16 h-16 md:w-auto shadow-2xl border-4 bg-opacity-60 border-green-500 bg-base-100 z-50 md:btn-ghost"
+				className="btn fixed bottom-20 md:top-0 right-7 md:right-20 w-16 h-16 md:w-auto shadow-2xl border-4 bg-opacity-60 border-green-500 z-50 md:btn-ghost rounded-full md:rounded-sm"
 				onClick={openSearchBar}
 			>
-				<span className="hidden md:block font-normal">記事を検索</span>
+				<span className="hidden md:block font-bold">記事を検索</span>
 				<BiSearch />
 			</button>
 			<div
