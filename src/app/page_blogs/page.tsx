@@ -1,10 +1,17 @@
 import { getBlogData } from "@/lib/microCMS/api";
+import { getQiitaBlogs } from "@/lib/qiita/getBlog";
 import React from "react";
 import BlogList from "./components/BlogList";
 import Top from "./components/Top";
 
 const page = async () => {
 	const blogs = await getBlogData();
+	const qiita = await getQiitaBlogs();
+	console.log(qiita);
+	// console.log(blogs)
+	// await fetch('http://localhost:3000/api/save-to-/api/save-to-microcms')
+	// const qiitaBogs = await qiita.json()
+	// console.log(qiitaBogs)
 	// const blogs = [
 	// 	{
 	// 		id: "111",

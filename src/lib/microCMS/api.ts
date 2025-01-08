@@ -32,3 +32,18 @@ export const getProductsData = async (): Promise<ProductDataType[]> => {
 
 	return response.contents;
 };
+
+export const addBlogData = async (blog: BlogDataType) => {
+	const client = createClient({
+		serviceDomain: serviceDomain,
+		apiKey: apiKey,
+	});
+
+	const response = await client.create({
+		endpoint: blogsEndPoint,
+		content: blog,
+	});
+	console.log(response);
+
+	return response;
+};
